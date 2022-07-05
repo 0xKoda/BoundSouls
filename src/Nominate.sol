@@ -7,9 +7,11 @@ import "./Registry.sol";
 contract Nominate {
     ERC721 soulBound;
     Registry registry;
+
     struct Nominee {
-        address[2] vouches;
+        address[1] vouches;
     }
+
     mapping(address => Nominee) nominees;
 
     function nominate(address nominee) public {
@@ -26,5 +28,10 @@ contract Nominate {
     //API to check if address is nominated
     function _isNominated(address nominee) public view returns (bool) {
         return nominees[nominee].vouches.length > 1;
+    }
+
+    function _getVouches(address nominee) public view returns (address[1] memory) {
+        address[1] memory _v = nominees[nominee].vouches;
+       return _v;
     }
 }

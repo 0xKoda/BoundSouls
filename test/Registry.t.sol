@@ -5,19 +5,24 @@ import "lib/forge-std/src/Test.sol";
 
 import {Registry} from "../src/Registry.sol";
 
-contract RegistryTest is DSTestPlus {
+contract RegistryTest is DSTest {
     Registry registry;
+    Vm vm;
+    address bob = address(0x1);
+    address alice = address(0x2);
+
 
     function setUp() public {
         registry = new Registry();
-        
+
     }
 
-    function testGetBound() public {
-        registry.getBound(addr(accounts(1)));
+    function testBind() public {
+        registry.bind();
+        assertTrue(registry.getState(address(this)));
     }
 
-    function testFunc2() public {
-        sampleContract.func2(1337);
-    }
+    // function testGet() public {
+    //     sampleContract.func2(1337);
+    // }
 }

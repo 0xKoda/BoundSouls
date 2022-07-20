@@ -1,0 +1,41 @@
+Changes:
+MVP = No 721 just a registry of a mapping and an API to check addresses are SB or not. 
+Mappings:
+address to Soul: If one dousnt exist yet, not yet soulbound or a candidate.
+struct soul {
+    address[1] noms;
+    Cat        state;
+    address[3] bT;
+}
+enum Cat {
+    Bound,
+    Bindless,
+    Banished
+}
+mapping(address => soul) souls;
+
+function getState(address s) public view returns (Cat){
+    return souls[s].state;
+}
+
+function nom(address c) public onlyBound returns (noms) {
+    require(souls[c].state != Banished, "we musnt bother the banished ones...");
+    if(souls[c].state[0] = 0){
+        souls[c].state[0] = msg.sender;
+    } else {
+        souls[c].state[1] = msg.sender;
+    }
+}
+
+function banish(address c) public onlyBound returns(string){
+    if(souls.bT[2])
+}
+
+
+
+
+Nominate: onlySB mod, requires 2 noms, ds in an array
+
+Mods:
+notBanished for nominating
+onlyBound for nominating

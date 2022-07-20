@@ -1,12 +1,16 @@
 # Bound Souls - SBT 
 
-A novel attempt at soul bound tokens as discussed in this [paper](https://vitalik.ca/general/2022/01/26/soulbound.html).
+A simple solution for soul bound tokens as discussed in this [paper](https://vitalik.ca/general/2022/01/26/soulbound.html).
+
 
 ## Details
 
-Each token must be non transferrable when bound to a soul. 
-Binding souls is revokable.
-A modifier to check if the contract to interact with is a bound soul.
+Registry.sol provides a public API for querying the state of souls.
+
+Souls may bind after 2 nominations from fellow soulbound.
+
+Souls may be revoked by upstanding soulBound, the Wizards.
+
 
 ### Setup
 

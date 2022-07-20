@@ -11,10 +11,8 @@ contract RegistryTest is DSTest {
     address bob = address(0x1);
     address alice = address(0x2);
 
-
     function setUp() public {
         registry = new Registry();
-
     }
 
     function testBind() public {

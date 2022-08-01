@@ -9,7 +9,7 @@ Registry.sol provides a public API for querying the state of souls.
 
 Souls may bind after 2 nominations from fellow soulbound.
 
-Souls may be revoked by upstanding soulBound, the Wizards.
+Souls may be revoked by upstanding soulBound, the Arbiters.
 
 
 ### Setup
